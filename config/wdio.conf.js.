@@ -1,0 +1,21 @@
+exports.config = {
+  runner: 'local',
+  path: '/wd/hub',
+  specs: [
+    './test/specs/**/*.js'
+  ],
+  maxInstances: 1,
+  capabilities: [{
+    platformName: 'Android',
+    deviceName: 'Pixel_8a',  
+    app: './apps/scopex-money.apk',  
+    automationName: 'UiAutomator2'
+  }],
+  logLevel: 'info',
+  framework: 'mocha',
+  reporters: ['spec'],
+  mochaOpts: {
+    ui: 'bdd',
+    timeout: 60000
+  }
+};
